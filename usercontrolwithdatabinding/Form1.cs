@@ -25,7 +25,16 @@ namespace usercontrolwithdatabinding
         {
             _model = new Customer();
             _model.PropertyChanged += _model_PropertyChanged;
+            _model.DefaultAddress.PropertyChanged += 
+                DefaultAddress_PropertyChanged;
+            _model.InvoiceAddress.PropertyChanged += DefaultAddress_PropertyChanged;
+            _model.DeliveryAddress.PropertyChanged += DefaultAddress_PropertyChanged;
             bsCustomer.DataSource = _model;
+            _SerializeModel();
+        }
+
+        void DefaultAddress_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
             _SerializeModel();
         }
 

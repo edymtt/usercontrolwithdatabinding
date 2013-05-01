@@ -6,9 +6,30 @@ using System.Threading.Tasks;
 
 namespace usercontrolwithdatabinding.Model
 {
-    class Address
+    public class Address : BindableBase
     {
-        public string Street { get; set; }
-        public string City { get; set; }
+        private string _street;
+        public string Street { 
+            get
+            {
+                return _street;
+            } 
+            set
+            {
+                SetProperty(ref _street, value);
+            }
+        }
+
+        private string _city;
+        public string City {
+            get
+            {
+                return _city;
+            }
+            set
+            {
+                SetProperty(ref _city, value);
+            }
+        }
     }
 }

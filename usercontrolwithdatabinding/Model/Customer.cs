@@ -43,8 +43,46 @@ namespace usercontrolwithdatabinding.Model
                 SetProperty(ref _title, value);
             }
         }
-        public Address DeliveryAddress { get; set; }
-        public Address InvoiceAddress { get; set; }
-        public Address DefaultAddress { get; set; }
+
+
+        private Address _DeliveryAddress = new Address();
+        public Address DeliveryAddress
+        {
+            get
+            {
+                return _DeliveryAddress;
+            }
+            set
+            {
+                _DeliveryAddress = value;
+            }
+        }
+
+
+        private Address _InvoiceAddress = new Address();
+        public Address InvoiceAddress
+        {
+            get
+            {
+                return _InvoiceAddress;
+            }
+            set
+            {
+                _InvoiceAddress = value;
+            }
+        }
+
+
+        private Address _defaultAddress=new Address();
+        public Address DefaultAddress {
+            get
+        {
+                return _defaultAddress;
+            } 
+            set
+            {
+                _defaultAddress = value;
+            }
+        }
     }
 }

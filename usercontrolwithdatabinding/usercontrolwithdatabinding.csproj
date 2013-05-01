@@ -86,10 +86,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\AddressControl.resx">
+      <DependentUpon>AddressControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\NameControl.resx">
       <DependentUpon>NameControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\usercontrolwithdatabinding.Model.Address.datasource" />
     <None Include="Properties\DataSources\usercontrolwithdatabinding.Model.Customer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

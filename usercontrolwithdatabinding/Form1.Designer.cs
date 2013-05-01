@@ -36,9 +36,20 @@
             this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nameControl1 = new usercontrolwithdatabinding.UserControls.NameControl();
             this.nameControl2 = new usercontrolwithdatabinding.UserControls.NameControl();
+            this.nameControl1 = new usercontrolwithdatabinding.UserControls.NameControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.addressControl1 = new usercontrolwithdatabinding.UserControls.AddressControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.addressControl2 = new usercontrolwithdatabinding.UserControls.AddressControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.addressControl3 = new usercontrolwithdatabinding.UserControls.AddressControl();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSerialize
@@ -57,6 +68,7 @@
             this.txtModel.Multiline = true;
             this.txtModel.Name = "txtModel";
             this.txtModel.ReadOnly = true;
+            this.txtModel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtModel.Size = new System.Drawing.Size(361, 128);
             this.txtModel.TabIndex = 1;
             // 
@@ -99,15 +111,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "LastName";
             // 
-            // nameControl1
-            // 
-            this.nameControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.nameControl1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCustomer, "FirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.nameControl1.Location = new System.Drawing.Point(76, 32);
-            this.nameControl1.Name = "nameControl1";
-            this.nameControl1.Size = new System.Drawing.Size(248, 30);
-            this.nameControl1.TabIndex = 6;
-            // 
             // nameControl2
             // 
             this.nameControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -117,11 +120,92 @@
             this.nameControl2.Size = new System.Drawing.Size(248, 30);
             this.nameControl2.TabIndex = 7;
             // 
+            // nameControl1
+            // 
+            this.nameControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.nameControl1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCustomer, "FirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.nameControl1.Location = new System.Drawing.Point(76, 32);
+            this.nameControl1.Name = "nameControl1";
+            this.nameControl1.Size = new System.Drawing.Size(248, 30);
+            this.nameControl1.TabIndex = 6;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(14, 110);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(459, 100);
+            this.tabControl1.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.addressControl1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(451, 74);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "DefaultAddress";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // addressControl1
+            // 
+            this.addressControl1.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bsCustomer, "DefaultAddress", true));
+            this.addressControl1.DataSource = null;
+            this.addressControl1.Location = new System.Drawing.Point(48, 7);
+            this.addressControl1.Name = "addressControl1";
+            this.addressControl1.Size = new System.Drawing.Size(296, 146);
+            this.addressControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.addressControl2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(451, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "InvoiceAddress";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // addressControl2
+            // 
+            this.addressControl2.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bsCustomer, "InvoiceAddress", true));
+            this.addressControl2.DataSource = null;
+            this.addressControl2.Location = new System.Drawing.Point(48, 7);
+            this.addressControl2.Name = "addressControl2";
+            this.addressControl2.Size = new System.Drawing.Size(296, 146);
+            this.addressControl2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.addressControl3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(451, 74);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "deliveryAddress";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // addressControl3
+            // 
+            this.addressControl3.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bsCustomer, "DeliveryAddress", true));
+            this.addressControl3.DataSource = null;
+            this.addressControl3.Location = new System.Drawing.Point(29, 6);
+            this.addressControl3.Name = "addressControl3";
+            this.addressControl3.Size = new System.Drawing.Size(296, 146);
+            this.addressControl3.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 351);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.nameControl2);
             this.Controls.Add(this.nameControl1);
             this.Controls.Add(this.label3);
@@ -134,6 +218,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +238,13 @@
         private System.Windows.Forms.Label label3;
         private UserControls.NameControl nameControl1;
         private UserControls.NameControl nameControl2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private UserControls.AddressControl addressControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private UserControls.AddressControl addressControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private UserControls.AddressControl addressControl3;
     }
 }
 
