@@ -31,9 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.btnSerialize = new System.Windows.Forms.Button();
             this.txtModel = new System.Windows.Forms.TextBox();
-            this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
+            this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nameControl1 = new usercontrolwithdatabinding.UserControls.NameControl();
+            this.nameControl2 = new usercontrolwithdatabinding.UserControls.NameControl();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,10 +60,6 @@
             this.txtModel.Size = new System.Drawing.Size(361, 128);
             this.txtModel.TabIndex = 1;
             // 
-            // bsCustomer
-            // 
-            this.bsCustomer.DataSource = typeof(usercontrolwithdatabinding.Model.Customer);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -77,11 +77,55 @@
             this.txtTitle.Size = new System.Drawing.Size(191, 20);
             this.txtTitle.TabIndex = 3;
             // 
+            // bsCustomer
+            // 
+            this.bsCustomer.DataSource = typeof(usercontrolwithdatabinding.Model.Customer);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "FirstName";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "LastName";
+            // 
+            // nameControl1
+            // 
+            this.nameControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.nameControl1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCustomer, "FirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.nameControl1.Location = new System.Drawing.Point(76, 32);
+            this.nameControl1.Name = "nameControl1";
+            this.nameControl1.Size = new System.Drawing.Size(248, 30);
+            this.nameControl1.TabIndex = 6;
+            // 
+            // nameControl2
+            // 
+            this.nameControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.nameControl2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCustomer, "LastName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.nameControl2.Location = new System.Drawing.Point(76, 69);
+            this.nameControl2.Name = "nameControl2";
+            this.nameControl2.Size = new System.Drawing.Size(248, 30);
+            this.nameControl2.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 351);
+            this.Controls.Add(this.nameControl2);
+            this.Controls.Add(this.nameControl1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtModel);
@@ -102,6 +146,10 @@
         private System.Windows.Forms.BindingSource bsCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private UserControls.NameControl nameControl1;
+        private UserControls.NameControl nameControl2;
     }
 }
 

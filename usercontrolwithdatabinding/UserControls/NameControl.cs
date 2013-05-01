@@ -16,5 +16,25 @@ namespace usercontrolwithdatabinding.UserControls
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            TextChanged(sender, e);
+        }
+
+        public event EventHandler TextChanged;
+
+        [Bindable(true)]
+        public string Text
+        {
+            get
+            {
+                return textBox1.Text;
+            }
+            set
+            {
+                textBox1.Text = value;
+            }
+        }
     }
 }

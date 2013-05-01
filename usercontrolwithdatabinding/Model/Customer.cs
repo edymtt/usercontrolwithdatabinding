@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace usercontrolwithdatabinding.Model
 {
-    class Customer : NotificationObject
+    class Customer : BindableBase
     {
         private string _firstName;
         public string FirstName {
@@ -15,12 +15,8 @@ namespace usercontrolwithdatabinding.Model
                 return _firstName;
             }
             set
-            { 
-                if(! String.Equals(value,_firstName))
-                {
-                    _firstName = value;
-                    RaisePropertyChanged(() => this.FirstName);
-                }
+            {
+                SetProperty(ref _firstName, value);
             }
         }
 
@@ -32,11 +28,7 @@ namespace usercontrolwithdatabinding.Model
             }
             set
             {
-                if (!String.Equals(value, _lastName))
-                {
-                    _lastName = value;
-                    RaisePropertyChanged(() => this.LastName);
-                }
+                SetProperty(ref _lastName, value);
             }
         }
 
@@ -48,11 +40,7 @@ namespace usercontrolwithdatabinding.Model
             }
             set
             {
-                if (!String.Equals(value, _title))
-                {
-                    _title = value;
-                    RaisePropertyChanged(() => this.Title);
-                }
+                SetProperty(ref _title, value);
             }
         }
         public Address DeliveryAddress { get; set; }
