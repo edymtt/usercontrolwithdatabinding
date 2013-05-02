@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace usercontrolwithdatabinding.Model
 {
-    class Customer : BindableBase
+    public class Customer : BindableBase, IDataErrorInfo
     {
+        private CustomerValidator _validator;
+
+        public Customer()
+        {
+            _validator=new CustomerValidator(this);
+        }
+
         private string _firstName;
         public string FirstName {
             get
@@ -83,6 +91,16 @@ namespace usercontrolwithdatabinding.Model
             {
                 _defaultAddress = value;
             }
+        }
+
+        string IDataErrorInfo.Error
+        {
+            get { return _validator.Error; }
+        }
+
+        string IDataErrorInfo.this[string columnName]
+        {
+            get { return _validator[columnName]; }
         }
     }
 }

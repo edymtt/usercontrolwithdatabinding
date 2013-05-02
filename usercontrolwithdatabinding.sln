@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{20D967
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usercontrolwithdatabinding_test", "usercontrolwithdatabinding_test\usercontrolwithdatabinding_test.csproj", "{172362AE-E619-4587-B17E-90924C50925C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{1DF2F6F7-8354-4EBA-8E76-3560C376B9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DF2F6F7-8354-4EBA-8E76-3560C376B9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DF2F6F7-8354-4EBA-8E76-3560C376B9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172362AE-E619-4587-B17E-90924C50925C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172362AE-E619-4587-B17E-90924C50925C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172362AE-E619-4587-B17E-90924C50925C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172362AE-E619-4587-B17E-90924C50925C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

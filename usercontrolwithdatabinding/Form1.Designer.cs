@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            usercontrolwithdatabinding.Model.Address address1 = new usercontrolwithdatabinding.Model.Address();
+            usercontrolwithdatabinding.Model.Address address2 = new usercontrolwithdatabinding.Model.Address();
+            usercontrolwithdatabinding.Model.Address address3 = new usercontrolwithdatabinding.Model.Address();
             this.btnSerialize = new System.Windows.Forms.Button();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,11 +48,13 @@
             this.addressControl2 = new usercontrolwithdatabinding.UserControls.AddressControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.addressControl3 = new usercontrolwithdatabinding.UserControls.AddressControl();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSerialize
@@ -154,7 +159,9 @@
             // addressControl1
             // 
             this.addressControl1.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bsCustomer, "DefaultAddress", true));
-            this.addressControl1.DataSource = null;
+            address1.City = null;
+            address1.Street = null;
+            this.addressControl1.DataSource = address1;
             this.addressControl1.Location = new System.Drawing.Point(48, 7);
             this.addressControl1.Name = "addressControl1";
             this.addressControl1.Size = new System.Drawing.Size(296, 146);
@@ -174,7 +181,9 @@
             // addressControl2
             // 
             this.addressControl2.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bsCustomer, "InvoiceAddress", true));
-            this.addressControl2.DataSource = null;
+            address2.City = null;
+            address2.Street = null;
+            this.addressControl2.DataSource = address2;
             this.addressControl2.Location = new System.Drawing.Point(48, 7);
             this.addressControl2.Name = "addressControl2";
             this.addressControl2.Size = new System.Drawing.Size(296, 146);
@@ -194,11 +203,18 @@
             // addressControl3
             // 
             this.addressControl3.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bsCustomer, "DeliveryAddress", true));
-            this.addressControl3.DataSource = null;
+            address3.City = null;
+            address3.Street = null;
+            this.addressControl3.DataSource = address3;
             this.addressControl3.Location = new System.Drawing.Point(29, 6);
             this.addressControl3.Name = "addressControl3";
             this.addressControl3.Size = new System.Drawing.Size(296, 146);
             this.addressControl3.TabIndex = 0;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.DataSource = this.bsCustomer;
             // 
             // Form1
             // 
@@ -222,6 +238,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,6 +262,7 @@
         private UserControls.AddressControl addressControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private UserControls.AddressControl addressControl3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
