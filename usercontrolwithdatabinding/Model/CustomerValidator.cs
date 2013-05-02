@@ -11,12 +11,16 @@ namespace usercontrolwithdatabinding.Model
     {
 
         private static string _titleProperty;
+        private static string _firstNameProperty;
+        private static string _lastNameProperty;
         private const string _errorValue = "error";
         private Customer _customer;
         public CustomerValidator(Customer customer)
         {
             _customer = customer;
             _titleProperty=PropertySupport.ExtractPropertyName(() => _customer.Title);
+            _firstNameProperty = PropertySupport.ExtractPropertyName(() => _customer.FirstName);
+            _lastNameProperty = PropertySupport.ExtractPropertyName(() => _customer.LastName);
         }
 
         public string Error
@@ -31,6 +35,20 @@ namespace usercontrolwithdatabinding.Model
                 if (columnName == _titleProperty)
                 {
                     if (_customer.Title == _errorValue)
+                    {
+                        return _errorValue;
+                    }
+                }
+                if (columnName == _firstNameProperty)
+                {
+                    if (_customer.FirstName == _errorValue)
+                    {
+                        return _errorValue;
+                    }
+                }
+                if (columnName == _lastNameProperty)
+                {
+                    if (_customer.LastName == _errorValue)
                     {
                         return _errorValue;
                     }
