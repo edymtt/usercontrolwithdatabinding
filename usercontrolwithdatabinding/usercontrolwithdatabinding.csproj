@@ -56,6 +56,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\AddressValidator.cs" />
     <Compile Include="Model\BindableBase.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\CustomerValidator.cs" />
